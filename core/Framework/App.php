@@ -46,62 +46,43 @@ class App
 			error_reporting(0);
 		}
 
-		// Check if the user is trying to access / route
-		if (sizeof($this->uriArray) < 1)
+		if ( isset($this->uriArray[0]) )
 		{
-			// Let the default controller@index handle the request
-			if ($this->controllerExists($this->config['defaultController']))
-			{
-				$this->handOverToController($this->config['defaultController'], 'index');
-				return;
-			} else {
-				echo $this->handleNotFound();
-				return;
-			}
-		}
+			$controller = $this->uriArray[0];
 
-		if (sizeof($this->uriArray) < 2)
-		{
-			if ($this->controllerExists($this->uriArray[0]))
+			if ( isset($this->uriArray[1]) )
 			{
-				$this->handOverToController($this->uriArray[0], 'index');
-				return;
+				$action = $this->uriArray[1];
 			} else {
-				echo $this->handleNotFound();
-				return;
+				$action = 'index';
 			}
-		}
 
-		if (sizeof($this->uriArray) < 3)
-		{
-			if ($this->controllerExists($this->uriArray[0]))
-			{
-				$this->handOverToController($this->uriArray[0], $this->uriArray[1]);
-				return;
-			} else {
-				echo $this->handleNotFound();
-				return;
-			}
-		}
-
-		$controllerName = $this->uriArray[0];
-		$actionName = $this->uriArray[1];
-		array_shift($this->uriArray);
-		array_shift($this->uriArray);
-		$params = $this->uriArray;
-		if ($this->controllerExists($controllerName))
-		{
-			$this->handOverToController($controllerName, $actionName, $params);
 		} else {
-			echo $this->handleNotFound();
-			return;
+			$controller = $this->config['defaultController'];
+			$action     = 'index';
 		}
+
+		if( sizeof($this->uriArray) > 2 )
+		{
+			array_shift($this->uriArray);
+			array_shift($this->uriArray);
+			$params = $this->uriArray;
+		} else {
+			$params = [];
+		}
+
+		$this->handOverToController($controller, $action, $params);
 	}
 
 	private function handOverToController( $controllerName, $action, $params = [] )
 	{
-		$controllerInstance = new \Home;
-		echo call_user_func_array([$controllerInstance, $action], $params);
+		if ( $this->controllerExists( $controllerName ) )
+		{
+			$controllerInstance = new \Home;
+			echo call_user_func_array([$controllerInstance, $action], $params);
+		} else {
+			$this->handleNotFound();
+		}
 	}
 
 	private function initWhoops()
