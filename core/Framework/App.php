@@ -33,10 +33,10 @@ class App
 	}
 
 	/**
-	 * Boot the app
+	 * Run the app
 	 * @return
 	 */
-	public function boot()
+	public function run()
 	{
 		if ($this->config['debug'])
 		{

@@ -11,7 +11,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 // Create the app //
 ////////////////////
 $app = new Core\Framework\App;
-//////////////////
-// Boot the app //
-//////////////////
-$app->boot();
+/////////////////
+// Run the app //
+/////////////////
+$app->run();
