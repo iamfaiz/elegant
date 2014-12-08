@@ -2,9 +2,10 @@
 
 class Home
 {
-	public function index( $user=1 )
+	public function index()
 	{
-		
-		return $user;
+		return View::render('home.html', [
+			'Framework' => 'Elegant'
+		]);
 	}
 }

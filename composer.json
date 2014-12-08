@@ -8,11 +8,13 @@
 			"app/models"
 		],
 		"files": [
-			"app/config/database.php"
+			"app/config/database.php",
+			"bootstrap/aliases.php"
 		]
 	},
 	"require": {
 		"filp/whoops": "~1.1",
-		"illuminate/database": "~4.2"
+		"illuminate/database": "~4.2",
+		"twig/twig": "~1.16"
 	}
 }
