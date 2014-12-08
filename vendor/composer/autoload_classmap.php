@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Home' => $baseDir . '/app/controllers/Home.php',
+    'Test' => $baseDir . '/app/controllers/Test.php',
     'User' => $baseDir . '/app/models/User.php',
     'Whoops\\Module' => $vendorDir . '/filp/whoops/src/deprecated/Zend/Module.php',
     'Whoops\\Provider\\Zend\\ExceptionStrategy' => $vendorDir . '/filp/whoops/src/deprecated/Zend/ExceptionStrategy.php',

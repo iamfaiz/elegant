@@ -3,5 +3,7 @@
 return array(
 	'defaultController' => 'Home',
 
-	'debug' => true
+	'debug' => true,
+
+	'base_url' => 'http://localhost'
 );

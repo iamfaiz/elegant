@@ -78,8 +78,16 @@ class App
 	{
 		if ( $this->controllerExists( $controllerName ) )
 		{
-			$controllerInstance = new \Home;
-			echo call_user_func_array([$controllerInstance, $action], $params);
+			$controllerClassName = ucfirst($controllerName);
+			$properNamespacedClass = '\\' . $controllerClassName;
+			$controllerInstance = new $properNamespacedClass();
+			$response = call_user_func_array([$controllerInstance, $action], $params);
+			if ( is_array($response) || is_object($response) )
+			{
+				echo json_encode($response);
+			} else {
+				echo $response;
+			}
 		} else {
 			$this->handleNotFound();
 		}
