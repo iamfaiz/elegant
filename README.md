@@ -17,4 +17,5 @@ Installation
 <hr>
 
 [Eloquent ORM Documentation](http://laravel.com/docs/4.2/eloquent)
+<br>
 [Twig Templating](http://twig.sensiolabs.org/)
