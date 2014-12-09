@@ -15,7 +15,6 @@ Installation
 5) That's it! Enjoy the framework
 
 <hr>
-<ul>
-	<li>[Eloquent ORM Documentation](http://laravel.com/docs/4.2/eloquent)</li>
-	<li>[Twig Templating](http://twig.sensiolabs.org/)</li>
-</ul>
+
+[Eloquent ORM Documentation](http://laravel.com/docs/4.2/eloquent)
+[Twig Templating](http://twig.sensiolabs.org/)
