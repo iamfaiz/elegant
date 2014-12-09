@@ -8,4 +8,11 @@ class View
 		$twig       = new \Twig_Environment($twigLoader);
 		return $twig->render( $viewName, $data );
 	}
+
+	public static function make( $viewName, array $data=array() )
+	{
+		$twigLoader = new \Twig_Loader_Filesystem(APP_PATH . '/app/views');
+		$twig       = new \Twig_Environment($twigLoader);
+		return $twig->render( $viewName, $data );
+	}
 }
