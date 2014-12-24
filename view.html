@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Elegant | The PHP MVC Framework</title>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body id="Model">
+		
+		<div data-includefile="partials/navbar.html"></div>
+
+		<div class="container">
+			<h1>Views</h1>
+			<p>Elegant uses <a href="http://twig.sensiolabs.org/">Twig Templating Engine</a> to power views.</p>
+			<p>All of your views will live in <code>app/views</code> directory. Just create any file in there.</p>
+			<p>Now if you want to render a view from the controller you can do: </p>
+			<pre>
+&lt;?php
+class Home
+{
+	public function index()
+	{
+		return View::render('home.html', [
+			'Framework' => 'Elegant'
+		]);
+	}
+}
+			</pre>
+			<p>And from the <code>app/views/home.html</code> you could just do: <code>The framework name is {{ Framework }}!</code>. And it will obviously render <code>The framework name is Elegant!</code></p>
+			<p>To find out more about templating checkout the <a href="http://twig.sensiolabs.org/documentation">twig documentation</a>.</p>
+		</div>
+
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>

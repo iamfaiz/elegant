@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Elegant | The PHP MVC Framework</title>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body id="index">
+		
+		<div data-includefile="partials/navbar.html"></div>
+
+		<div class="container">
+			<h1>Controllers</h1>
+			<p>A Controller is simply a class file that is named in a way that can be associated with a URI.</p>
+			<p>For example: 
+				<code>example.com/home/index/hello</code>
+				will execute the index method of the Home class and give hello as the first argument.
+				<code>echo new Home()->index('hello');</code>.
+				Index is the default method it will execute if no other method is specified in the url. For example in the case of: 
+				<code>example.com/home</code>
+				It will execute: 
+				<code>echo new Home()->index();</code>
+				You can also change the default controller in <code>app/cofig/config.php</code>.
+				By default its <code>Home</code>. So if the url is <code>example.com</code> it will execute: 
+				<code>echo new Home()->index();</code>
+				<br>
+				<strong>All of the controllers live in <code>app/controllers</code> directory.</strong>
+			</p>
+		</div>
+
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>
