@@ -1,0 +1,26 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400);
+
+*, *:before, *:after {
+	font-family: Lato, Arial;
+}
+
+::selection {
+	background: #eee;
+}
+
+body {
+	padding-top: 50px;
+	line-height: 2.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-transform: uppercase;
+}
+
+.navbar-brand {
+	font-weight: bold;
+}
+
+code, pre {
+	font-family: 'Source Code Pro', Monaco, Consolas;
+}

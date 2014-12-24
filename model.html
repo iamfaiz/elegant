@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Elegant | The PHP MVC Framework</title>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body id="Model">
+		
+		<div data-includefile="partials/navbar.html"></div>
+
+		<div class="container">
+			<h1>Models</h1>
+			<p>Elegant uses an open source ORM library called eloquent to power models in the app. </p>
+			<h2>To create a new model</h2>
+			<ul>
+				<li>To get started, create an Eloquent model. Models typically live in the <code>app/models</code> directory. </li>
+				<li>To define a new model write:
+					<pre>class User extends Eloquent {}</pre>
+				</li>
+				<li>Note that we did not tell Eloquent which table to use for our User model. The lower-case, plural name of the class will be used as the table name unless another name is explicitly specified. So, in this case, Eloquent will assume the User model stores records in the users table. You may specify a custom table by defining a table property on your model:
+				<pre>class User extends Eloquent {
+
+    protected $table = 'my_users';
+
+}</pre>
+				</li>
+				<li>For more information checkout eloquent <a href="http://laravel.com/docs/4.2/eloquent">documentation</a>.</li>
+			</ul>
+		</div>
+
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>
