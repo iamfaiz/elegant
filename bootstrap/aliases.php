@@ -9,3 +9,6 @@ class_alias('Core\Framework\Redirect', 'Redirect');
 
 // Validation Library
 class_alias('Respect\Validation\Validator', 'Validator');
+
+// Eloquent ORM Library
+class_alias('Illuminate\Database\Eloquent\Model', 'Eloquent');
