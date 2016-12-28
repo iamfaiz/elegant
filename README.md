@@ -18,9 +18,9 @@ Installation
 <br>
 5) That's it! Enjoy the framework
 <br>
-
 <hr>
-
+[Documentation](http://iamfaiz.github.io/elegant/)
+<br>
 [Eloquent ORM Documentation](http://laravel.com/docs/4.2/eloquent)
 <br>
 [Twig Templating](http://twig.sensiolabs.org/)
